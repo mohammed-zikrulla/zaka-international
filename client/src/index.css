@@ -4,97 +4,94 @@
 @tailwind utilities;
 
 :root {
-  /* Earthy, premium palette */
-  /* Primary: Deep Saffron/Orange */
-  --primary: 25 90% 48%;
-  --primary-foreground: 30 50% 98%;
+  /* Earthy, premium palette - Enhanced Contrast and Depth */
+  /* Primary: Deep Saffron/Terracotta mix */
+  --primary: 24 75% 45%;
+  --primary-foreground: 35 30% 98%;
 
-  /* Secondary: Deep Earth Brown */
-  --secondary: 28 35% 25%;
-  --secondary-foreground: 30 20% 94%;
+  /* Secondary: Rich Forest Green / Olive mix */
+  --secondary: 142 30% 20%;
+  --secondary-foreground: 35 30% 98%;
 
-  /* Accent: Olive Green */
-  --accent: 75 45% 45%;
-  --accent-foreground: 30 50% 98%;
+  /* Accent: Deep Earth Umber */
+  --accent: 28 45% 25%;
+  --accent-foreground: 35 30% 98%;
 
-  /* Backgrounds: Warm Off-White/Paper */
-  --background: 35 30% 98%;
-  --foreground: 25 10% 20%;
+  /* Backgrounds: Premium Warm Linen */
+  --background: 35 35% 97%;
+  --foreground: 25 20% 15%;
 
-  /* Cards & Muted */
-  --card: 35 30% 99%;
-  --card-foreground: 25 10% 20%;
-  --popover: 35 30% 99%;
-  --popover-foreground: 25 10% 20%;
-  --muted: 35 20% 92%;
-  --muted-foreground: 25 10% 45%;
+  /* Cards: Soft Elevated Cream */
+  --card: 35 35% 98.5%;
+  --card-foreground: 25 20% 15%;
+  --popover: 35 35% 98.5%;
+  --popover-foreground: 25 20% 15%;
+  
+  /* Muted & Borders */
+  --muted: 35 25% 92%;
+  --muted-foreground: 25 15% 40%;
+  --border: 35 20% 88%;
+  --input: 35 20% 88%;
+  --ring: 24 75% 45%;
 
-  /* Destructive */
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --radius: 0.75rem;
 
-  /* Borders */
-  --border: 35 15% 85%;
-  --input: 35 15% 85%;
-  --ring: 25 90% 48%;
-
-  --radius: 0.5rem;
-
-  --font-sans: 'DM Sans', sans-serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
   --font-display: 'Playfair Display', serif;
 }
 
 .dark {
-  /* Dark mode mappings (if needed, though brand leans light/warm) */
-  --background: 28 35% 10%;
-  --foreground: 35 20% 90%;
-  --card: 28 35% 12%;
-  --card-foreground: 35 20% 90%;
-  --popover: 28 35% 12%;
-  --popover-foreground: 35 20% 90%;
-  --primary: 25 80% 55%;
-  --primary-foreground: 28 35% 10%;
-  --secondary: 35 15% 20%;
-  --secondary-foreground: 35 20% 90%;
-  --muted: 28 25% 18%;
-  --muted-foreground: 35 15% 65%;
-  --accent: 75 40% 40%;
-  --accent-foreground: 35 20% 90%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 28 25% 20%;
-  --input: 28 25% 20%;
-  --ring: 25 80% 55%;
+  --background: 28 40% 8%;
+  --foreground: 35 20% 92%;
+  --card: 28 40% 10%;
+  --card-foreground: 35 20% 92%;
+  --primary: 24 85% 60%;
+  --primary-foreground: 28 40% 8%;
+  --secondary: 142 25% 25%;
+  --secondary-foreground: 35 20% 92%;
+  --accent: 28 40% 30%;
+  --accent-foreground: 35 20% 92%;
+  --muted: 28 30% 15%;
+  --muted-foreground: 35 15% 70%;
+  --border: 28 30% 18%;
+  --input: 28 30% 18%;
+  --ring: 24 85% 60%;
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border/60;
   }
   body {
-    @apply bg-background text-foreground antialiased font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground antialiased font-sans selection:bg-primary/20 selection:text-primary;
+    font-feature-settings: "rlig" 1, "calt" 1, "kern" 1;
+    letter-spacing: -0.01em;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold tracking-tight;
+    @apply font-display font-bold tracking-tight text-accent dark:text-foreground;
+    line-height: 1.1;
   }
 }
 
-/* Custom Utilities for Premium Feel */
+/* Custom Utilities for Premium Business Feel */
 .container-padding {
-  @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+  @apply px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto;
 }
 
-.hero-gradient {
-  background: linear-gradient(to right bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.3), rgba(0,0,0,0.6));
 }
 
-.text-shadow {
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+.premium-card {
+  @apply bg-card border border-border/50 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 .section-spacing {
-  @apply py-16 md:py-24;
+  @apply py-20 md:py-32;
 }
 
 /* Smooth Scrolling */
