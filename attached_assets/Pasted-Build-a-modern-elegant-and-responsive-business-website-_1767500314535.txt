@@ -1,0 +1,115 @@
+Build a modern, elegant, and responsive business website for Zaka International, a wholesaler and exporter of Indian spices & agricultural goods.
+
+Brand tone & style
+
+Premium, trustworthy, export-grade
+
+Clean, modern UI with subtle Indian elements
+
+Earthy colors (spice tones like saffron, deep brown, olive green)
+
+Elegant typography, good spacing, smooth animations
+
+Website sections
+
+Hero Section
+
+Full-width carousel/slider
+
+High-quality visuals of Indian spices and agricultural products
+
+Headline: “Global Supplier of Premium Indian Spices & Agro Commodities”
+
+Subtext emphasizing quality sourcing, bulk supply, and exports
+
+CTA buttons: View Catalog | Contact Us
+
+About Us
+
+Brief professional introduction to Zaka International
+
+Focus on sourcing from India, quality control, bulk & wholesale supply
+
+Export-ready, B2B focused content
+
+Product Catalog
+
+Grid-based catalog layout
+
+Categories like:
+
+Whole Spices
+
+Ground Spices
+
+Agricultural Commodities
+
+Each product card should have:
+
+Product image
+
+Product name
+
+Short description (bulk / wholesale / export quality)
+
+Why Choose Us
+
+Clean icon-based highlights:
+
+Quality Sourcing
+
+Competitive Wholesale Pricing
+
+Bulk Supply Capability
+
+Export & Logistics Support
+
+Contact Section
+
+Contact form (Name, Email, Company, Message)
+
+Display business contact info:
+
+Email
+
+Phone / WhatsApp
+
+Location: India
+
+Footer
+
+Company name: Zaka International
+
+Short tagline
+
+Quick links (About, Catalog, Contact)
+
+Technical requirements
+
+Fully responsive (mobile, tablet, desktop)
+
+Modern HTML, CSS, and JavaScript (or React if preferred)
+
+Smooth hover effects and transitions
+
+Clean, well-structured code
+
+SEO-friendly layout
+
+The final website should feel professional, export-oriented, and visually appealing to international B2B buyers.
+
+🔥 Optional upgrade (if you want it sharper)
+
+Add this line at the end if Replit supports it:
+
+Use modern UI patterns, subtle animations, and a premium export-business look similar to global commodity trading websites.
+
+If you want, next we can:
+
+Refine catalog product copy
+
+Create a brand tagline
+
+Optimize it for SEO keywords like “Indian spice exporter”
+
+Or convert it into a React + Vite premium portfolio-style site
