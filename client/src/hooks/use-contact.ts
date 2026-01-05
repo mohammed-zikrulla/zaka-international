@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { type InsertMessage } from "@shared/schema";
+import { type InsertMessage } from "client/schema";
 import { useToast } from "@/hooks/use-toast";
 
 export function useContactForm() {

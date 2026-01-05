@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
-import { type Product } from "@shared/schema";
+import { type Product } from "client/schema";
 import { cn } from "@/lib/utils";
 
 interface ProductCardProps {
