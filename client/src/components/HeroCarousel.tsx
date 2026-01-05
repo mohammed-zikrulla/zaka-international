@@ -48,7 +48,7 @@ const heroSlides = [
 
 export function HeroCarousel() {
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: false })
+    Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   return (
@@ -56,8 +56,6 @@ export function HeroCarousel() {
       <Carousel
         plugins={[plugin.current]}
         className="w-full h-full"
-        onMouseEnter={plugin.current.stop}
-        onMouseLeave={plugin.current.reset}
         opts={{
           loop: true,
         }}
@@ -65,53 +63,7 @@ export function HeroCarousel() {
         <CarouselContent className="h-[80vh] min-h-[600px] ml-0">
           {heroSlides.map((slide, index) => (
             <CarouselItem key={index} className="relative h-full w-full pl-0">
-              <div className="absolute inset-0 z-0">
-                <img 
-                  src={slide.image} 
-                  alt={slide.title} 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-secondary/60 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
-              </div>
-
-              <div className="container-padding relative z-10 h-full flex items-center justify-center text-center text-white pt-20">
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={staggerContainer}
-                  className="max-w-4xl"
-                >
-                  <motion.div variants={fadeIn} className="mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                    <span className="text-sm font-medium tracking-wide uppercase">Premium Indian Exports</span>
-                  </motion.div>
-                  
-                  <motion.h1 variants={fadeIn} className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-shadow">
-                    {slide.title} <br/>
-                    <span className="text-primary-foreground">{slide.highlight}</span>
-                  </motion.h1>
-                  
-                  <motion.p variants={fadeIn} className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                    {slide.description}
-                  </motion.p>
-                  
-                  <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link href="/products">
-                      <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25">
-                        Explore Catalog
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Button>
-                    </Link>
-                    <Link href="/contact">
-                      <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-white text-white hover:bg-white hover:text-secondary bg-transparent backdrop-blur-sm">
-                        Contact Us
-                      </Button>
-                    </Link>
-                  </motion.div>
-                </motion.div>
-              </div>
+              <HeroSlide slide={slide} />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -120,6 +72,68 @@ export function HeroCarousel() {
           <CarouselNext className="static translate-y-0 h-12 w-12 bg-white/10 border-white/20 text-white hover:bg-white hover:text-secondary" />
         </div>
       </Carousel>
+    </section>
+  );
+}
+
+function HeroSlide({ slide }: { slide: typeof heroSlides[0] }) {
+  return (
+    <>
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={slide.image} 
+          alt={slide.title} 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-secondary/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
+      </div>
+
+      <div className="container-padding relative z-10 h-full flex items-center justify-center text-center text-white pt-20">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="max-w-4xl"
+        >
+          <motion.div variants={fadeIn} className="mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="text-sm font-medium tracking-wide uppercase">Premium Indian Exports</span>
+          </motion.div>
+          
+          <motion.h1 variants={fadeIn} className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-shadow">
+            {slide.title} <br/>
+            <span className="text-primary-foreground">{slide.highlight}</span>
+          </motion.h1>
+          
+          <motion.p variants={fadeIn} className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+            {slide.description}
+          </motion.p>
+          
+          <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/products">
+              <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25">
+                Explore Catalog
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-white text-white hover:bg-white hover:text-secondary bg-transparent backdrop-blur-sm">
+                Contact Us
+              </Button>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+    </>
+  );
+}
+
+export function HeroBanner({ image, title, highlight, description }: { image: string, title: string, highlight: string, description: string }) {
+  return (
+    <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
+      <HeroSlide slide={{ image, title, highlight, description }} />
     </section>
   );
 }
