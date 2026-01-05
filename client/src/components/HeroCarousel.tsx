@@ -67,9 +67,9 @@ export function HeroCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">
-          <CarouselPrevious className="static translate-y-0 h-12 w-12 bg-white/10 border-white/20 text-white hover:bg-white hover:text-secondary" />
-          <CarouselNext className="static translate-y-0 h-12 w-12 bg-white/10 border-white/20 text-white hover:bg-white hover:text-secondary" />
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-6 z-20">
+          <CarouselPrevious className="static translate-y-0 h-12 w-12 bg-white/10 border-white/20 text-white hover:bg-white hover:text-secondary hover-elevate" />
+          <CarouselNext className="static translate-y-0 h-12 w-12 bg-white/10 border-white/20 text-white hover:bg-white hover:text-secondary hover-elevate" />
         </div>
       </Carousel>
     </section>
@@ -85,11 +85,11 @@ function HeroSlide({ slide }: { slide: typeof heroSlides[0] }) {
           alt={slide.title} 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-secondary/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-secondary/70 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
       </div>
 
-      <div className="container-padding relative z-10 h-full flex items-center justify-center text-center text-white pt-20">
+      <div className="container-padding relative z-10 h-full flex flex-col items-center justify-center text-center text-white pt-20 pb-32">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -97,29 +97,29 @@ function HeroSlide({ slide }: { slide: typeof heroSlides[0] }) {
           variants={staggerContainer}
           className="max-w-4xl"
         >
-          <motion.div variants={fadeIn} className="mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+          <motion.div variants={fadeIn} className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-sm font-medium tracking-wide uppercase">Premium Indian Exports</span>
           </motion.div>
           
-          <motion.h1 variants={fadeIn} className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-shadow">
+          <motion.h1 variants={fadeIn} className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-shadow px-4">
             {slide.title} <br/>
             <span className="text-primary-foreground">{slide.highlight}</span>
           </motion.h1>
           
-          <motion.p variants={fadeIn} className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+          <motion.p variants={fadeIn} className="text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto font-light leading-relaxed px-6">
             {slide.description}
           </motion.p>
           
-          <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 justify-center">
+          <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link href="/products">
-              <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25">
+              <Button size="lg" className="min-h-12 text-lg px-10 py-4 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 transition-all">
                 Explore Catalog
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-white text-white hover:bg-white hover:text-secondary bg-transparent backdrop-blur-sm">
+              <Button size="lg" variant="outline" className="min-h-12 text-lg px-10 py-4 rounded-full border-white text-white hover:bg-white hover:text-secondary bg-transparent backdrop-blur-sm transition-all">
                 Contact Us
               </Button>
             </Link>

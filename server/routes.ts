@@ -3,6 +3,9 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import { Resend } from "resend";
+
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function registerRoutes(
   httpServer: Server,
@@ -29,6 +32,27 @@ export async function registerRoutes(
     try {
       const input = api.contact.submit.input.parse(req.body);
       const message = await storage.createMessage(input);
+
+      // Send email if Resend is configured
+      if (resend) {
+        try {
+          await resend.emails.send({
+            from: "Zaka International <onboarding@resend.dev>",
+            to: "export@zakainternational.com",
+            subject: `New Inquiry from ${input.name}`,
+            text: `
+              Name: ${input.name}
+              Email: ${input.email}
+              Company: ${input.company || 'N/A'}
+              Message: ${input.message}
+            `,
+          });
+        } catch (emailErr) {
+          console.error("Failed to send email:", emailErr);
+          // Don't fail the request if email fails, as we stored it in DB
+        }
+      }
+
       res.status(201).json(message);
     } catch (err) {
       if (err instanceof z.ZodError) {
