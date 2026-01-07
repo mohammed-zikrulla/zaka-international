@@ -73,17 +73,17 @@ export function Footer() {
             <li className="flex items-start gap-3 text-secondary-foreground/80">
               <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
               <span>
-                123 Export Zone, Market Yard,<br />
-                Mumbai, Maharashtra, India
+                554, Kote Camp, Tarikere,<br />
+                Chikkamagaluru, Karnataka, India
               </span>
             </li>
             <li className="flex items-center gap-3 text-secondary-foreground/80">
               <Phone className="h-5 w-5 text-primary shrink-0" />
-              <span>+91 987 654 3210</span>
+              <span>+91 97420-91664</span>
             </li>
             <li className="flex items-center gap-3 text-secondary-foreground/80">
               <Mail className="h-5 w-5 text-primary shrink-0" />
-              <span>export@zakainternational.com</span>
+              <span>contact@zakainternational.com</span>
             </li>
           </ul>
         </div>

@@ -55,7 +55,7 @@ export default function About() {
           <div className="space-y-8">
             {/* Unsplash: Indian farmer or fields */}
             <img 
-              src="https://images.unsplash.com/photo-1625246333195-58197bd47d72?q=80&w=2070&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1633281121789-69e58edec7f6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGNvZmZlZSUyMGZhcm18ZW58MHx8MHx8fDA%3D?q=80&w=2070&auto=format&fit=crop"
               alt="Indian Agriculture" 
               className="rounded-2xl shadow-xl w-full object-cover aspect-video"
             />
