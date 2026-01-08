@@ -1,5 +1,13 @@
 import { Link } from "wouter";
-import { Globe, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import {
+  Globe,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,11 +26,16 @@ export function Footer() {
             </span>
           </Link>
           <p className="text-secondary-foreground/80 leading-relaxed max-w-xs">
-            Connecting the world with the finest Indian spices and agricultural commodities. Quality, integrity, and reliability in every shipment.
+            Connecting the world with the finest Indian spices and agricultural
+            commodities. Quality, integrity, and reliability in every shipment.
           </p>
           <div className="flex gap-4">
             {[Facebook, Instagram, Linkedin].map((Icon, i) => (
-              <a key={i} href="#" className="p-2 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-colors">
+              <a
+                key={i}
+                href="#"
+                className="p-2 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-colors"
+              >
                 <Icon className="h-5 w-5" />
               </a>
             ))}
@@ -31,7 +44,9 @@ export function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-display text-lg font-semibold mb-6 text-white">Quick Links</h4>
+          <h4 className="font-display text-lg font-semibold mb-6 text-white">
+            Quick Links
+          </h4>
           <ul className="space-y-3">
             {[
               { label: "Home", href: "/" },
@@ -54,11 +69,21 @@ export function Footer() {
 
         {/* Products */}
         <div>
-          <h4 className="font-display text-lg font-semibold mb-6 text-white">Our Products</h4>
+          <h4 className="font-display text-lg font-semibold mb-6 text-white">
+            Our Products
+          </h4>
           <ul className="space-y-3">
-            {["Whole Spices", "Ground Spices", "Oil Seeds", "Pulses & Grains"].map((item) => (
+            {[
+              "Whole Spices",
+              "Ground Spices",
+              "Oil Seeds",
+              "Pulses & Grains",
+            ].map((item) => (
               <li key={item}>
-                <Link href="/products" className="text-secondary-foreground/70 hover:text-primary transition-colors">
+                <Link
+                  href="/products"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors"
+                >
                   {item}
                 </Link>
               </li>
@@ -68,12 +93,15 @@ export function Footer() {
 
         {/* Contact Info */}
         <div>
-          <h4 className="font-display text-lg font-semibold mb-6 text-white">Contact Us</h4>
+          <h4 className="font-display text-lg font-semibold mb-6 text-white">
+            Contact Us
+          </h4>
           <ul className="space-y-4">
             <li className="flex items-start gap-3 text-secondary-foreground/80">
               <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
               <span>
-                554, Kote Camp, Tarikere,<br />
+                554, Kote Camp, Tarikere,
+                <br />
                 Chikkamagaluru, Karnataka, India
               </span>
             </li>
