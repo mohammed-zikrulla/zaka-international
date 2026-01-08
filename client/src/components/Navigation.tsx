@@ -39,10 +39,12 @@ export function Navigation() {
           <div className="bg-primary p-1.5 rounded-lg text-white transform group-hover:rotate-12 transition-transform duration-300">
             <Globe className="h-6 w-6" />
           </div>
-          <span className={cn(
-            "font-display text-2xl font-bold tracking-tight transition-colors",
-            scrolled || isOpen ? "text-secondary" : "text-white"
-          )}>
+          <span
+            className={cn(
+              "font-display text-2xl font-bold tracking-tight transition-colors",
+              scrolled || isOpen ? "text-secondary" : "text-white"
+            )}
+          >
             Zaka International
           </span>
         </Link>
@@ -57,14 +59,18 @@ export function Navigation() {
                 "text-sm font-medium transition-colors hover:text-primary relative group py-1",
                 location === link.href
                   ? "text-primary font-semibold"
-                  : scrolled ? "text-secondary" : "text-white/90 hover:text-white"
+                  : scrolled
+                  ? "text-secondary"
+                  : "text-white/90 hover:text-white"
               )}
             >
               {link.name}
-              <span className={cn(
-                "absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100",
-                location === link.href && "scale-x-100"
-              )} />
+              <span
+                className={cn(
+                  "absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100",
+                  location === link.href && "scale-x-100"
+                )}
+              />
             </Link>
           ))}
           <Link href="/contact">
@@ -95,7 +101,9 @@ export function Navigation() {
         <div
           className={cn(
             "fixed inset-0 bg-background z-40 md:hidden flex flex-col items-center justify-center gap-8 transition-all duration-300 ease-in-out",
-            isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+            isOpen
+              ? "opacity-100 visible"
+              : "opacity-0 invisible pointer-events-none"
           )}
         >
           {navLinks.map((link) => (
