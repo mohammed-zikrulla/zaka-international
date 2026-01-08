@@ -29,7 +29,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-6 flex-grow">
           {product.description}
         </p>
-        
+
         <Link href={`/products`}>
           <button className="w-full mt-auto flex items-center justify-center gap-2 py-2.5 rounded-lg border border-border text-sm font-semibold text-secondary group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all duration-300">
             View Details
